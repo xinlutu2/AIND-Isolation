@@ -366,11 +366,9 @@ class AlphaBetaPlayer(IsolationPlayer):
             next_move = game.forecast_move(m)
 
             score = self.min_helper(next_move, depth - 1, alpha, beta)
-            # print("after min_play:",alpha,score0)
             if score > alpha:
                 alpha = score
                 best_move = m
-                # print("alpha:",alpha,",score0:", score0, ", move:",m)
         return best_move
 
     def max_helper(self, game, depth, alpha, beta):
